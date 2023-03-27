@@ -1,0 +1,16 @@
+select avg (salary)
+from instructor;
+
+
+select avg (salary) as avg_salary
+from instructor
+
+
+select name
+from instructor
+where salary is null;
+
+select name,
+from instructor
+where salary>10000 is unknown
+
