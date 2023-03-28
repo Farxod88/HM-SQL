@@ -1,11 +1,11 @@
 -- A)
--- select ID.works, person_name, city
+-- select works.ID, person_name, city
 -- from employee , works
 -- where company_name="First Bank Corporation"
 
 
 -- B)
-select ID.works, person_name, city
+select works.ID, person_name, city
 from employee, works
 where company_name="First Bank Corporation" and salary>10000;
 
