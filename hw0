@@ -1,3 +1,9 @@
+SET search_path = my_schema, "$user", recipesexample;
+
+-- select * from Ingredients
+
+select * from Recipes order by RecipeTitle asc
+
 SET search_path = my_schema, "$user", entertainmentagencyexample;
 
 -- select AgtFirstName, AgtlastName, AgtPhoneNumber
