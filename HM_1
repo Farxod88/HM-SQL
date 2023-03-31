@@ -1,0 +1,9 @@
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+
+-- select AgtFirstName, AgtlastName, AgtPhoneNumber
+-- from agents
+-- order by AgtFirstName asc;
+-- 2)
+-- select * from Engagements order by Enddate asc
+-- 3)
+select engagementnumber, startdate from engagements order by startdate desc
