@@ -1,0 +1,5 @@
+SET search_path = my_schema, "$user", recipesexample;
+
+-- select * from Ingredients
+
+select * from Recipes order by RecipeTitle asc
