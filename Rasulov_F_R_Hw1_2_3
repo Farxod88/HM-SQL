@@ -1,0 +1,29 @@
+SET search_path = my_schema, "$user", salesordersexample;
+
+-- Hw_1
+
+-- select Orderdate,  Customers.Custfirstname, Customers.Custlastname
+-- from Orders
+-- inner join Customers
+-- using (Customerid)
+-- order by Orderdate, Customers.Custfirstname
+
+
+-- Hw_2
+
+-- select Products.productname, Vendors.vendname, Product_Vendors.wholesaleprice
+-- from (Vendors
+-- 	 inner join Product_Vendors
+-- 	 using (vendorid))
+-- 	 inner join Products on Product_Vendors.productnumber=Products.productnumber
+-- 	 where Product_Vendors.wholesaleprice<'100';
+
+
+-- Hw_3
+
+-- select CONCAT(Customers.Custfirstname, '  ',Customers.custlastname) as Customer,
+--        CONCAT(Employees.empfirstname, '  ',Customers.custlastname) as Employee
+-- from Customers
+-- 	 inner join Employees
+-- 	 on Customers.custlastname=Employees.emplastname
+-- 	 ORDER BY customers.CustFirstName, employees.EmpFirstName
