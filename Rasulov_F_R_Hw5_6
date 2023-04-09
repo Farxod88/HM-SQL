@@ -1,0 +1,41 @@
+SET search_path = my_schema, "$user", recipesexample;
+
+-- select Recipetitle
+-- from Recipes
+-- where (Recipeid  in
+-- (select Recipe_Ingredients.Recipeid
+-- from Ingredients inner join
+-- Recipe_Ingredients on Ingredients.Ingredientid = Recipe_Ingredients.Ingredientid
+-- where Ingredients.Ingredientname = 'Beef' or
+--  Ingredients.Ingredientname = 'Garlic'))
+
+
+select Recipes.Recipetitle
+from Recipes
+where EXISTS
+(select Recipe_Ingredients.*
+from Ingredients
+inner join Recipe_Ingredients
+on Ingredients.Ingredientid = Recipe_Ingredients.Ingredientid
+where Ingredients.IngredientName='Beef'
+and Recipe_Ingredients.Recipeid = Recipes.Recipeid)
+and EXISTS
+(select Recipe_Ingredients.*
+from Ingredients
+inner join Recipe_Ingredients
+on Ingredients.Ingredientid = Recipe_Ingredients.Ingredientid
+where Ingredients.IngredientName='Garlic'
+and Recipe_Ingredients.Recipeid = Recipes.Recipeid);
+
+
+
+-- select Recipes.Recipeid, Recipes.Recipetitle
+-- from Recipes
+-- where Recipes.Recipeid in
+-- (select Recipe_Ingredients.Recipeid
+-- from (Recipe_Ingredients
+-- inner join Ingredients
+-- on Recipe_Ingredients.Ingredientid = Ingredients.Ingredientid)
+-- inner join Ingredient_Classes
+-- on Ingredient_Classes.IngredientClassid = Ingredients.IngredientClassid
+-- where Ingredient_Classes.IngredientClassDescription = 'Dairy');
