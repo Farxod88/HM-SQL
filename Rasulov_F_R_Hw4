@@ -1,0 +1,6 @@
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+
+select concat(Agtfirstname, ' ', Agtlastname) as Agent, Entertainers.entstagename, Agents.agtzipcode
+from Agents
+inner join Entertainers
+on Agents.agtzipcode=Entertainers.entzipcode
